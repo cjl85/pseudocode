@@ -1,0 +1,143 @@
+1)
+
+Clean code would be syntax that is clear, concise, and
+follows the DRY principle.
+
+This is important in helping keep the application running
+smoothly. Bugs and errors are easier to spot and eliminates
+congestion within your code.
+
+Any developer should be able to look at what you're doing
+and be able to pick up on it right away.
+
+2)
+
+3)
+
+I believe this code is fairly clean. It has an if/else statement that
+returns one of two conditions based on the string.
+
+function(x, y) {
+  if (y === "F") {
+    z = (x - 32) * (5 / 9)
+    console.log(z)
+  } else if (y === "C") {
+    z = (x * 1.8000 + 32.00)
+    console.log(z)
+  }
+};
+
+
+4)
+
+I assigned percentage to the sum divided by the total times 100.
+Also, got rid of the last line of code.
+
+function calcPercent(sum, total) {
+  let percentage = sum / total * 100;
+  if (total !== 0) {
+    return percentage
+  } else {
+    console.log("Sorry, cannot divide by 0")
+  }
+};
+
+5a)
+
+function checkOutCustomer(subTotal, discountRate, paymentType) {
+  let total = subTotal * discountRate + (subTotal * tax)
+  console.log(`Your total due is ${total}`)
+
+  let change = amount - subTotal * discountRate + (subTotal * tax);
+
+  if (paymentType === 'CASH') {
+      getPayment(amount);
+
+  console.log(`Change due: ${change}`)
+
+  } else if (paymentType === 'CREDIT CARD') {
+      getPayment(amount)
+
+  let creditChange = subTotal * discountRate + (subTotal * tax);
+
+  console.log(`Your credit card has been charged: ${creditChange}`)
+  }
+};
+
+5b)
+let guestA = guest.accountActive,
+    guestB = guest.hasOverdueBooks,
+    guestC = guest.outstandingFees,
+    guestD = guest.books;
+
+function checkoutBook(book, guest) {
+    if (guestA === true && guestB !== true && guestC === 0) {
+      guestD.append(book)
+      console.log("Your books have been issued.")
+    } else {
+      console.log("Unable to check out book.")
+    }
+};
+
+5c)
+
+class BankAccount {
+  constructor() {
+
+    function displayBalance {
+    console.log(balance);
+    }
+
+    function deposit(amount) {
+    let balanceDeposit = balance + amount;
+      return balanceDeposit
+    }
+
+    function withdraw(amount) {
+    let balanceWithdraw = balance - amount;
+    if (balanceWithdraw > amount) {
+      return balanceWithdraw
+     }
+    }
+
+    function creditCardOffer {
+    if (customer.hasCreditCard !== true) {
+      offerCreditCard();
+     }
+    }
+
+    function checkStatus {
+    if (customer.hasCheckingAccount !== true) {
+      offerCheckingAccount();
+     }
+    }
+  }
+};
+
+6)
+
+const perfectSquare = (arr) => {
+  let totalArray = arr.reduce((total, value) => total + value, 0);
+
+  if (totalArray % Math.sqrt(totalArray) === 0) {
+
+    return Math.sqrt(totalArray);
+
+  } else {
+
+    return totalArray;
+ }
+}
+console.log(perfectSquare([10, 1, 4, 6, 1, 1, 2]));
+console.log(perfectSquare([1, 1]));
+
+7)
+
+const duplicate = (arr) => {
+  if ((new Set(arr)).size !== arr.length) {
+    return true
+  } else {
+    return false
+  }
+}
+console.log(duplicate([1,2,3,4,4]));
