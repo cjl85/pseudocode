@@ -1,0 +1,35 @@
+Why do programmers use pseudocode?
+
+Pseudocode is using layman's terms in order process out step by step
+what it is you're trying to accomplish.
+
+There is no code involved, but it gives you the basic structure of the layout
+you're trying to go for.
+
+If you run pseudocode on your computer what would happen?
+
+It would not run as the pseudocode would not make sense to the computer.
+
+1)
+
+- Create a function
+- Has 2 parameters - (number1, number2)
+- Whichever number is greater is printed to console
+
+2)
+
+- Create a function
+- Make a loop that prints out numbers from 1 - 100
+
+3)
+
+- Create a function
+- Use method to find a specific part of a phonebook
+- Most likely accessing an array using find or search method
+
+4)
+const phoneBook = [arbitrary info of entries];
+
+const searchPhonebook = (entry) => {
+    return phoneBook.find(entry)
+};
