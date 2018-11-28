@@ -1,0 +1,97 @@
+1) What is the main difference between a stack and a queue?
+
+Stack data structures implement Last In, First Out prioritized entries.
+The last piece of data that arrives is the first to be addressed and so on.
+
+Queue data structures implement the First In, First Out prioritized entries.
+The first piece of data that arrives is the first to be addressed.
+
+2) What are the similarities between stacks and queues?
+
+I believe one similarity would be that once a process starts, another process
+isn't allowed to pick from the middle of the stack/queue.
+
+There aren't any indices available in either.
+
+3) Imagine you are an engineer tasked with implementing the UNDO and REDO options
+   in a word processor such as Microsoft Word. Which data structure would you use for each option and why?
+
+I believe I would chose the stack data structure to implement UNDO/REDO.
+
+The Last In, First Out approach seems to fit the UNDO/REDO operation, as
+soon as a piece of data is added, it can be immediately accessed and revised
+and vice versa.
+
+///////////////////////////////////////////////////////////////////////////////
+
+FUNCTION reverseString
+INIT stack as empty array
+INIT reversed
+
+INPUT characters into word
+ITERATE over each character in word
+PUSH character to end of array
+END
+
+FOR length of the word Bloc
+ITERATE over each character in word
+CALL pop method on stack
+ADD characters to reversed
+END
+
+let word = 'Bloc';
+
+const reverseString = (str) => {
+  let stack = [];
+
+  for(let i = 0; i < str.length; i++){
+      stack.push(str[i]);
+  }
+  let reversed = '';
+
+  for (let i = 0; i < word.length; i++) {
+      reversed += stack.pop();
+  }
+  return reversed;
+}
+console.log(reverseString('Bloc'));
+
+////////////////////////////////////////////////////
+
+const stack = (queue) => {
+  let queueArray = [],
+       itemArray = [];
+
+  for (let i = 0; i < queue.length; i++) {
+     if (i === queue.length - 1){
+       itemArray.push(queue[i]);
+     } else {
+       queueArray.push(queue[i]);
+     }
+  }
+  return itemArray
+}
+console.log(stack("String"));
+
+/////////////////////////////////////////////////////
+
+class Queue {
+  constructor(elements){
+    this.elements = elements;
+  }
+
+  enqueue(elements){
+    this.elements.push(elements);
+    return this.elements;
+  }
+
+  dequeue(){
+    this.elements.splice(0, 1);
+    return this.elements;
+  }
+}
+
+let queue = new Queue(['john', 'chris', 'mag']);
+queue.enqueue('bob');
+queue.dequeue();
+console.log(queue.elements);
