@@ -1,0 +1,56 @@
+1a)
+
+const members = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+
+1b)
+
+members.push("Mary");
+console.log(members);
+
+1c)
+
+const member = members.findIndex(i => i === "Josh");
+console.log(member);
+// 2
+
+1d)
+
+const member2 = members.findIndex(i => i === "Emily");
+console.log(member2);
+// -1, no element found
+
+1e)
+
+const member3 = members.splice(1, 0, "Melissa");
+console.log(members);
+
+1f)
+
+const member4 = members.splice(3, 1);
+console.log(members);
+
+2)
+
+An example of a real-world example of using data structures would
+be linked lists.
+
+Through their ability to become synchronous via double linked lists,
+it can serve as a practical data structure for build a music playlist.
+
+In a doubly-linked list, because each node has reference to the next and
+previous node, it would be straightforward to implement a
+skip forward/rewind functionality through that.
+
+You can also add a play next song functionality as well as
+adding or appending new songs to the list as well.
+
+The head and tail of the list can serve to skip forward to the end
+or go back to the beginning of the list as well.
+
+3)
+
+Using the above example, devs will be able to have the ability to
+modify any part of the linked list through accessing the nodes.
+
+Because of its synchronous nature due to being doubly linked, the ability
+to implement features that involve two-way data binding can be done.
