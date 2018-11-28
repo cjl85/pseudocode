@@ -1,0 +1,127 @@
+1) What are some pros and cons of using linked lists instead of arrays?
+
+Linked lists Pros
+
+- No empty nodes, wasted space, nodes are only created when needed.
+- Each node is independent, more memory efficient than arrays.
+
+Cons
+
+- No index references
+- Must access list from beginning to find element
+
+
+
+2) Come up with a real world example of a linked list.
+
+Utilizing a linked list when it comes to a music playlist
+makes it easy to control functionality.
+
+If we were to use a doubly-linked list, we could implement
+a fast forward/backward functionality because each node has reference
+to each other. (except head and tail)
+
+We could also go down the list of nodes by implementing a
+play next track function.
+
+We could also add a new track to the list by appending or
+prepending the track to the end or start of the list.
+
+Finding the beginning and end of a track would be quick,
+as we would be able to look at the head and tail for that.
+
+// PROGRAMMING Q'S //
+
+1)
+
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    constructor() {
+        this.head = null;
+        this.last = null;
+    }
+    push(value) {
+        let node = new Node(value);
+        if (!this.head) {
+            this.head = node;
+        } else {
+            this.last.next = node;
+        }
+        this.last = node;
+    }
+}
+
+let ll = new LinkedList;
+
+ll.push(10);
+console.log(ll);
+
+ll.push(11);
+console.log(ll);
+
+ll.push(12);
+console.log(ll);
+
+2)
+
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    constructor() {
+        this.head = null;
+        this.last = null;
+    }
+    push(value) {
+        var node = new Node(value),
+            temp = this.head;
+
+        while (temp) {
+            if (temp.value === value) return;
+            temp = temp.next;
+        }
+
+        if (!this.head) {
+            this.head = node;
+        } else {
+            this.last.next = node;
+        }
+        this.last = node;
+    }
+}
+
+var ll = new LinkedList;
+
+ll.push(10);
+console.log(ll);
+
+ll.push(11);
+console.log(ll);
+
+3)
+
+const reverseLinkedList = (linkedlist) => {
+  let node = linkedlist,
+      prev = null;
+
+  while(node) {
+    let save = node.next;
+
+    node.next = prev;
+
+    previous = node;
+
+    node = save;
+  }
+  return previous;
+}
