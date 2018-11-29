@@ -1,0 +1,47 @@
+1) Using proper pseudo-code, describe the following primitive algorithms:
+
+Making coffee;
+- INIT coffee pot, coffee, cup
+- METHOD turn on coffee pot with coffee
+- METHOD pour coffee into cup
+END
+
+Washing dishes;
+- INIT scrub daddy, dishsoap, dishes
+- METHOD put dishsoap on scrubdaddy
+- METHOD clean dishes
+- IF dish is dirty, clean, else put away
+
+Bowling:
+- INIT bowling ball, pins
+- METHOD roll bowling ball to set amount of pins
+- IF remaining pins are zero, return strike
+- ELSE remaining pins are greater than zero, return remaining pins
+- METHOD reset pins
+
+2) As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for a situation. Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or manufacturing a product). Google's algorithm produces more relevant results than other search engines; what about each of your cases make them stand out?
+
+COMPANIES:
+
+Tesla - Revolutionized the way to harness electricity in a manner that reduces the need for oil/gas in cars.
+
+Nintendo - Innovative in their design, approach, and layout of their video games system and games.
+
+Gutenberg Printing Press - Historically changing invention that allowed for much quicker production of print material while reducing manual labor.
+
+Tesla the inventor is probably the most impressive of the group. Figured out a way to harness free energy
+and many practical applications for it.
+
+3) Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+
+Efficient algorithm
+
+- Goal is clear and understandable
+- Steps are written out in clear, concise manner
+- If steps followed, will take a certain amount of time
+
+Inefficient algorithm
+
+- Reader doesn't know the goal or gist right away
+- Unclear steps/directions
+- Doesn't layout amount of time it could take
