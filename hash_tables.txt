@@ -1,0 +1,116 @@
+1) What is a hash table?
+
+A hash table is a type of data structure that stores each value by linking it to a key, forming key-value pairs.
+
+2) What is hashing?
+
+Hashing is the conversion from a string to a numerical index.
+
+3) How does a hash table store data?
+
+Once a hash table can figure out its hash code, it can then use that as a key
+and determine where to place the key-value pair.
+
+4) How are hash tables and objects different?
+
+Hash tables implement key/value pairs, keys can be any data type.
+
+Objects can implement key/values pairs but keys must be strings or symbols.
+
+5) Determine whether you would use a hash table or an object to store each of the following pieces of data:
+
+A list of pets and their unique names.
+
+- Object
+
+The name, age, and the birthday of your best friend.
+
+- Object
+
+The name and location of every company in a given city.
+
+- Hash Table
+
+All of the books checked out from a library by a particular individual.
+
+- Hash Table
+
+The primary and secondary phone numbers for a contact.
+
+- Object
+
+
+6) Build a system that allows a sales associate to enter a customer's name, address, and phone number into the system and look up customers using their phone numbers.
+Store this information in a hash table.
+
+customerData = {
+  customer : 'John Smith',
+  address : '1 Way Street',
+  number : '0604',
+}
+
+const hashTable = {};
+
+addCustomer = customerData => {
+  hashTable[customerData.number] = customerData
+};
+
+searchCustomer = customerNumber => {
+  return hashTable[customerNumber]
+};
+
+hashTable = {
+  '0604' : {
+    customer : 'John Smith',
+    address : '1 Way Street',
+    number : '0604',
+  },
+  '0702' : {
+    customer : 'Michael Doe',
+    address : '2nd Street',
+    number : '0702',
+  },
+}
+
+
+7) Build a system that allows a store owner to track their store's inventory using a hash table for storage.
+
+storeInventory = {
+   furniture : 'bed',
+    location : 'B',
+          id : '234',
+}
+
+const hashtable = {};
+
+addInventory = storeInventory => {
+  hashTable[storeInventory.miscellaneous] = storeInventory
+};
+
+searchInventory = customerLocation => {
+  return hashTable[customerLocation]
+};
+
+8) Build a system that allows digital copies of newspapers to be entered and searched by publisher and publication date.
+Use hash tables to store the necessary data.
+
+newspaperData = {
+  publisher : 'Atlas',
+       date : '1-1-90'
+}
+
+const hashTable = {};
+
+addNewspaper = newspaperData => {
+  hashTable[newspaperData.number] = newspaperData
+};
+
+searchNewspaper = newspaperPublisher => {
+  return hashTable[newspaperPublisher]
+};
+
+hashTable = {
+  '1-1-90' : {
+    publisher: 'Atlas'
+  }
+};
