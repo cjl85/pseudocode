@@ -1,0 +1,66 @@
+1) What is a real-life scenario that uses linear search?
+
+An example could be working an old school paging system in apartments.
+
+These machines would allow you to search names one by one,
+but you would have to go through each entry before you get to
+the one you want.
+
+2) What is a real-life scenario that uses binary search?
+
+An example could be searching for a book in a library.
+Usually, they'll be sorted by alphabetically ordered, so we
+could go to the middle, and start eliminating one side that we
+don't need and start looking on the other side.
+
+3) Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search?
+
+7 Iterations
+
+
+4) Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
+
+3 Iterations
+
+5) Given an unsorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+
+I believe we would need to use the linear search, as binary
+searches only work for sorted collections.
+
+6) Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning
+
+Binary search would be quicker as we could go to the halfway point, and begin to eliminate the side we don't need.
+
+///////////////////////////////////
+
+1) You and a friend have set a wager to see who can find the word "Albatross" in the dictionary the fastest. Write a program to allow you to win the bet.
+
+let dictionary = ['Albatross', "Bug", "Car", "Dog"];
+
+const linearSearch = (arr, word) => {
+    let result = null, value;
+    for (let i = 0; i < dictionary.length; i++) {
+        value = dictionary[i];
+        if(value === word) {
+          result = i;
+        }
+
+    }
+  return result;
+}
+
+console.log(linearSearch(['Albatross', "Bug", "Car", "Dog"], "Albatross"));
+
+2) You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the fish tank. Write a program that will help you net the right fish.
+
+let fishTank = ["dog", "cat", "white-spotted goldfish"];
+
+const netFish = (arr, target) => {
+  for (let i = 0; i < fishTank.length; i++) {
+     if(fishTank[i] === target) {
+       return "Caught White-Fish!"
+     }
+  }
+  return "Sorry no fish"
+}
+console.log(netFish(["dog", "cat", "white-spotted goldfish"], "white-spotted goldfish"));
