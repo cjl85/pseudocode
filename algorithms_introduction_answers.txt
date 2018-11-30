@@ -56,9 +56,21 @@ COMPANIES:
 
 Tesla - Revolutionized the way to harness electricity in a manner that reduces the need for oil/gas in cars.
 
+They made an algorithm that delivers a slick new vehicle that operates just as efficient, if not more efficient than gas
+powered cars.
+
 Nintendo - Innovative in their design, approach, and layout of their video games system and games.
 
+Nintendo has developed an algorithm that combines its innovation
+with intuitive game play and design. The ability to use motion
+sensor controllers with the system allows for a more interactive
+approach to gaming.
+
 Gutenberg Printing Press - Historically changing invention that allowed for much quicker production of print material while reducing manual labor.
+
+Gutenberg developed an algorithm that allows the user to print
+materials much quicker than before. He automated the process of
+copying text and revolutionized printing forever. 
 
 Tesla the inventor is probably the most impressive of the group. Figured out a way to harness free energy
 and many practical applications for it.
@@ -81,4 +93,4 @@ The more efficient algorithm will be clear and easily understood
 If there is any question as to what a part of an algorithm means,
 then there is a good chance that something needs to be revised.
 
-An algorithm that allows the reader to spend the least amount of time trying to interpret what its instructions are and lets the reader start to implement those instructions instead would be considered a well written algorithm. 
+An algorithm that allows the reader to spend the least amount of time trying to interpret what its instructions are and lets the reader start to implement those instructions instead would be considered a well written algorithm.
