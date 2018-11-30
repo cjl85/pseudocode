@@ -37,19 +37,28 @@ Binary search would be quicker as we could go to the halfway point, and begin to
 
 let dictionary = ['Albatross', "Bug", "Car", "Dog"];
 
-const linearSearch = (arr, word) => {
-    let result = null, value;
-    for (let i = 0; i < dictionary.length; i++) {
-        value = dictionary[i];
-        if(value === word) {
-          result = i;
-        }
+const binarySearch = (array, word) => {
+    let leftHalf = 0;
+    let rightHalf = array.length - 1;
 
+    if (word < array[leftHalf] || word > array[rightHalf]) {
+        return false
     }
-  return result;
-}
 
-console.log(linearSearch(['Albatross', "Bug", "Car", "Dog"], "Albatross"));
+    while (leftHalf <= rightHalf) {
+      let middle = Math.floor((leftHalf + rightHalf) / 2)
+
+      if (array[middle] === word) {
+        return middle
+      } else if (array[middle] < word) {
+        leftHalf = middle + 1
+      } else {
+        rightHalf = middle - 1
+      }
+    }
+  return null
+}
+binarySearch(dictionary, 'Albatross')
 
 2) You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the fish tank. Write a program that will help you net the right fish.
 
