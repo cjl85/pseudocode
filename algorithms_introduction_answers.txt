@@ -1,23 +1,54 @@
 1) Using proper pseudo-code, describe the following primitive algorithms:
 
 Making coffee;
-- INIT coffee pot, coffee, cup
-- METHOD turn on coffee pot with coffee
-- METHOD pour coffee into cup
-END
+FUNCTION
+  IF filter is in basket THEN
+    IF enough coffee grounds is in filter THEN
+      WHILE coffee is not brewed
+        keep brewing coffee
+      END WHILE
+      PRINT coffee
+    END IF
+  END IF
+END FUNCTION
 
 Washing dishes;
-- INIT scrub daddy, dishsoap, dishes
-- METHOD put dishsoap on scrubdaddy
-- METHOD clean dishes
-- IF dish is dirty, clean, else put away
+INIT scrub daddy, soap, dish
+FUNCTION
+  WHILE sink is not full of water THEN
+    Increment water
+  END WHILE
+  ADD soap to water
+  IF water has soap
+    FOR each dirty dish
+      put dish in sink and wash
+    END FOR
+  END IF
+  FOR each dish that's in the sink
+    IF dish is clean
+      rinse dish
+      dry dish
+      put dish away
+    END IF
+  END FOR
+END FUNCTION
 
 Bowling:
-- INIT bowling ball, pins
-- METHOD roll bowling ball to set amount of pins
-- IF remaining pins are zero, return strike
-- ELSE remaining pins are greater than zero, return remaining pins
-- METHOD reset pins
+INIT bowling ball, pins
+FUNCTION
+  IF pins not set up THEN
+    SET 10 pins
+  END IF
+  IF pins are set up THEN
+  METHOD roll bowling ball
+  END IF
+  FOR each pin
+    IF pins remain THEN
+      METHOD roll bowling ball
+    END IF
+    ELSE SET 10 pins
+  END FOR
+END FUNCTION
 
 2) As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for a situation. Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or manufacturing a product). Google's algorithm produces more relevant results than other search engines; what about each of your cases make them stand out?
 
@@ -45,3 +76,9 @@ Inefficient algorithm
 - Reader doesn't know the goal or gist right away
 - Unclear steps/directions
 - Doesn't layout amount of time it could take
+
+The more efficient algorithm will be clear and easily understood
+If there is any question as to what a part of an algorithm means,
+then there is a good chance that something needs to be revised.
+
+An algorithm that allows the reader to spend the least amount of time trying to interpret what its instructions are and lets the reader start to implement those instructions instead would be considered a well written algorithm. 
