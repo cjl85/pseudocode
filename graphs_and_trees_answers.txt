@@ -1,53 +1,128 @@
 1) What is a binary tree and what makes it unique to other trees?
 
+A binary tree is a data structure that has Nodes. These Nodes
+are also data structures that consist of a value and the ability to point to other adjacent members.
+
+It is unique because every Node can only have up to two child Nodes.
+
 2) What is a heuristic?
+
+Heuristic is a method designed to resolve a problem as quick as
+possible when classic methods take too long.
+
+Completeness, accuracy, and optimization are the trade offs for
+the speed that heuristic functions provide.
 
 3) What is another problem besides the shortest-path problem that requires the use of heuristics?
 
+Making an educated guess can be an example of the use of heuristics. A conclusion is reached in a relatively short amount of time without the time/ability to do more research.
+
 4) What is the difference between a depth-first search and a breadth-first search?
+
+Depth-first Search: It starts at the root node and goes all the way down a single branch searching for the desired element. If the element is not found, it backtracks and start searching another branch all the way down again.
+
+Breadth-first Search: It starts at the root node and explores the row of nodes in each level before moving on to the next row.
 
 5) Explain in your own words what an undirected, a-cyclic, unweighted graph is.
 
+This is a graph that doesn't have an absolute edge. The connection
+between Nodes are not clear. It does not form loops and also does
+not assign any costs of travel in between Nodes.
+
 6) What kind of graph is a binary search tree?
+
+Directed A-cyclic Unweighted
 
 //////////////////////////
 1)
 
-function Node(val){
- this.value = val;
- this.left = null;
- this.right = null;
-}
-
-function searchBinary(rootNode, val) {
-    if (rootNode.key === null)
-        return null;
-
-    let nodeKey = parseInt(rootNode.val);
-
-    if (val < nodeKey) {
-        return searchBinary(rootNode.left, val);
-    } else if (val > nodeKey) {
-        return searchBinary(rootNode.right, val);
-    } else {
-        return rootNode.value;
-    }
+class Node {
+  constructor(value, left = null, right = null) {
+    this.value = value;
+    this.left = left;
+    this.right = right;
+  }
 };
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+  add(value) {
+    const node = this.root;
+    if (node === null) {
+      this.root = new Node(value);
+      return;
+    } else {
+
+    searchTree(node) {
+      if (value < node.value) {
+        if (node.left === null) {
+          node.left = new Node(value);
+            return;
+        } else if (node.left !== null) {
+            return searchTree(node.left);
+        } else if (value > node.value) {
+            if (node.right === null) {
+              node.right = new Node(value);
+              return;
+            } else if (node.right !== null) {
+                return searchTree(node.right);
+          } else {
+              return null;
+          }
+        }
+        return searchTree(node);
+      }
+    }
+
+    const existValue = (value) => {
+      let current = this.root;
+
+      while(current) {
+        if (value === current.value) {
+            return true;
+        }
+        if (value < current.value) {
+            current = current.left;
+        } else {
+            current = current.right;
+        }
+      }
+      return false;
+    }
+
+    let bst = new BinarySearchTree();
 
 
 //////////////////////////
 
 2)
 
-class Node {
-	constructor(data) {
-		this.data = data;
-		this.left = null;
-		this.right = null;
-	}
+const tree = new BinarySearchTree();
+
+const searchPath = (node, target, number = 0) => {
+    if (!node) {
+      return 0;
+    }
+    if (node.value === target) {
+      return number;
+  }
+      return searchPath(node.left, target, number + 1) || searchPath(node.right, target, number + 1);
 }
 
-class BinarySearchTree {
-	constructor() {
-		this.root = null;
-	}
+const lowAncestor = (node, x, i ) => {
+    if (!node || node.value === x || node.value === i) {
+        return node;
+    }
+  const left  = lowAncestor(node.left, x, i);
+  const right = lowAncestor(node.right, x, i);
+    return left && right ? node : (left || right);
+}
+
+const findDistance = (tree, x, i) => {
+    const low = lowAncestor(tree, x, i);
+    return findDistance(low, x) + findDistance(low, i);
+}
+
+findDistance(tree, n1, n2);
