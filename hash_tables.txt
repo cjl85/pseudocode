@@ -75,13 +75,13 @@ hashTable = {
 
 7) Build a system that allows a store owner to track their store's inventory using a hash table for storage.
 
+const hashtable = {};
+
 storeInventory = {
    furniture : 'bed',
     location : 'B',
           id : '234',
 }
-
-const hashtable = {};
 
 addInventory = storeInventory => {
   hashTable[storeInventory.miscellaneous] = storeInventory
@@ -94,12 +94,12 @@ searchInventory = customerLocation => {
 8) Build a system that allows digital copies of newspapers to be entered and searched by publisher and publication date.
 Use hash tables to store the necessary data.
 
+const hashTable = {};
+
 newspaperData = {
   publisher : 'Atlas',
        date : '1-1-90'
 }
-
-const hashTable = {};
 
 addNewspaper = newspaperData => {
   hashTable[newspaperData.number] = newspaperData
