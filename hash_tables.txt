@@ -84,11 +84,11 @@ storeInventory = {
 }
 
 addInventory = storeInventory => {
-  hashTable[storeInventory.miscellaneous] = storeInventory
+  hashTable[storeInventory.furniture] = storeInventory
 };
 
 searchInventory = customerLocation => {
-  return hashTable[customerLocation]
+  return hashTable[storeInventory]
 };
 
 8) Build a system that allows digital copies of newspapers to be entered and searched by publisher and publication date.
